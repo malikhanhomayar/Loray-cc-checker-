@@ -92,7 +92,6 @@ from helpers import (
 )
 import checker_bridge
 import auth
-import ayden
 try:
     import webshare as _webshare_mod
     _WEBSHARE_AVAILABLE = True
@@ -4313,8 +4312,7 @@ async def _ayd_check_single(
 
         proxy_data = random.choice(proxies) if proxies else None
         try:
-            last_result = await ayden.process_payment(link, cc_str, proxy_data)
-            if last_result.get("error") and "proxy" in last_result["error"].lower():
+                        if last_result.get("error") and "proxy" in last_result["error"].lower():
                 continue
             break
         except Exception as e:
@@ -4483,8 +4481,7 @@ async def cmd_ayd(message: types.Message):
 
     try:
         proxy_data = random.choice(proxies)
-        setup_result = await ayden.process_payment(adyen_link, all_ccs[0], proxy_data)
-    except Exception as e:
+          except Exception as e:
         _AYD_ACTIVE_USERS.discard(user_id)
         _AYD_STOP_FLAGS.pop(stop_key, None)
         await safe_edit(loading_msg, 
