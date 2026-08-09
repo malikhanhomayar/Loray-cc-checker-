@@ -3,5 +3,4 @@ aiohttp
 httpx
 requests
 cachetools
-curl_cffi
-cryptography
+
