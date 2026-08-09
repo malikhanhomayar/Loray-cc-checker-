@@ -92,61 +92,61 @@ from helpers import (
 )
 import checker_bridge
 import auth
- # ====== AYDEN MODULE (INLINE) ======
-   import base64 as _base64
-   from cryptography.hazmat.primitives import serialization as _serial, hashes as _hashes
-   from cryptography.hazmat.primitives.asymmetric import padding as _padding
-   from cryptography.hazmat.backends import default_backend as _default_backend
+import auth
+# ====== AYDEN MODULE (INLINE) ======
+import base64 as _base64
+from cryptography.hazmat.primitives import serialization as _serial, hashes as _hashes
+from cryptography.hazmat.primitives.asymmetric import padding as _padding
+from cryptography.hazmat.backends import default_backend as _default_backend
 
-   _ADYEN_CLIENT_KEY_URL = "https://checkoutshopper-live.adyen.com/checkoutshopper/v1/clientKeys"
-   _ADYEN_PAYMENT_URL    = "https://checkoutshopper-live.adyen.com/checkoutshopper/v1/payments"
-   _ADYEN_VERSION = "v71"
-   _ADYEN_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+_ADYEN_CLIENT_KEY_URL = "https://checkoutshopper-live.adyen.com/checkoutshopper/v1/clientKeys"
+_ADYEN_PAYMENT_URL    = "https://checkoutshopper-live.adyen.com/checkoutshopper/v1/payments"
+_ADYEN_VERSION = "v71"
+_ADYEN_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
-   def _ayden_extract_session(url: str) -> str:
-       for pat in [r'/sessions/([A-Za-z0-9_\-]+)', r'/payments/([A-Za-z0-9_\-]+)', r'sessionId=([A-Za-z0-9_\-]+)']:
-           m = re.search(pat, url)
-           if m:
-               return m.group(1)
-       raise ValueError(f"No session in URL: {url}")
+def _ayden_extract_session(url: str) -> str:
+    for pat in [r'/sessions/([A-Za-z0-9_\-]+)', r'/payments/([A-Za-z0-9_\-]+)', r'sessionId=([A-Za-z0-9_\-]+)']:
+        m = re.search(pat, url)
+        if m:
+            return m.group(1)
+    raise ValueError(f"No session in URL: {url}")
 
-   def _ayden_fetch_pubkey(sess, proxy):
-       r = sess.post(_ADYEN_CLIENT_KEY_URL, json={"version": _ADYEN_VERSION}, proxies=proxy, timeout=15)
-       r.raise_for_status()
-       return r.json()["publicKey"]
+def _ayden_fetch_pubkey(sess, proxy):
+    r = sess.post(_ADYEN_CLIENT_KEY_URL, json={"version": _ADYEN_VERSION}, proxies=proxy, timeout=15)
+    r.raise_for_status()
+    return r.json()["publicKey"]
 
-   def _ayden_encrypt(cc, mm, yy, cvc, pubkey_str):
-       pub = _serial.load_pem_public_key(pubkey_str.encode(), backend=_default_backend())
-       def enc(v):
-           ct = pub.encrypt(v.encode(), _padding.OAEP(mgf=_padding.MGF1(algorithm=_hashes.SHA256()), algorithm=_hashes.SHA256(), label=None))
-           return _base64.b64encode(ct).decode()
-       return {"encryptedCardNumber": enc(cc.replace(" ","")), "encryptedExpiryMonth": enc(mm.zfill(2)), "encryptedExpiryYear": enc(yy[-2:]), "encryptedSecurityCode": enc(cvc)}
+def _ayden_encrypt(cc, mm, yy, cvc, pubkey_str):
+    pub = _serial.load_pem_public_key(pubkey_str.encode(), backend=_default_backend())
+    def enc(v):
+        ct = pub.encrypt(v.encode(), _padding.OAEP(mgf=_padding.MGF1(algorithm=_hashes.SHA256()), algorithm=_hashes.SHA256(), label=None))
+        return _base64.b64encode(ct).decode()
+    return {"encryptedCardNumber": enc(cc.replace(" ","")), "encryptedExpiryMonth": enc(mm.zfill(2)), "encryptedExpiryYear": enc(yy[-2:]), "encryptedSecurityCode": enc(cvc)}
 
-   def _ayden_parse(cc_str):
-       p = cc_str.split("|")
-       if len(p)!=4: raise ValueError("CC format: number|MM|YYYY|CVV")
-       return p[0].strip(), p[1].strip(), p[2].strip(), p[3].strip()
+def _ayden_parse(cc_str):
+    p = cc_str.split("|")
+    if len(p)!=4: raise ValueError("CC format: number|MM|YYYY|CVV")
+    return p[0].strip(), p[1].strip(), p[2].strip(), p[3].strip()
 
-   async def ayden_process_payment(link, cc_str, proxy=None):
-       try:
-           sid = _ayden_extract_session(link)
-           sess = requests.Session()
-           sess.headers.update({"User-Agent": _ADYEN_UA})
-           pk = _ayden_fetch_pubkey(sess, proxy)
-           num, mm, yy, cvc = _ayden_parse(cc_str)
-           enc = _ayden_encrypt(num, mm, yy, cvc, pk)
-           payload = {"sessionId": sid, "paymentMethod": {"type": "scheme", **enc, "holderName": "John Doe"}, "browserInfo": {"userAgent": _ADYEN_UA, "acceptHeader": "*/*", "language": "en-US", "colorDepth": 24, "screenHeight": 1080, "screenWidth": 1920, "timeZoneOffset": -60, "javaEnabled": True}}
-           r = sess.post(_ADYEN_PAYMENT_URL, json=payload, headers={"Content-Type": "application/json", "Origin": "https://checkoutshopper-live.adyen.com", "Referer": link}, proxies=proxy, timeout=30)
-           rj = r.json()
-           if r.status_code in (200,201,202):
-               rc = rj.get("resultCode","Unknown")
-               if rc=="Authorised": return {"status":"approved","response":"Authorised","cc":cc_str}
-               if rc=="Refused": return {"status":"declined","response":rj.get("refusalReason","Refused"),"cc":cc_str}
-               return {"status":rc.lower(),"response":rj.get("message",""),"cc":cc_str}
-           return {"error":rj.get("message",f"HTTP {r.status_code}")[:100],"cc":cc_str}
-       except Exception as e:
-           return {"error":str(e)[:100],"cc":cc_str}
-   
+async def ayden_process_payment(link, cc_str, proxy=None):
+    try:
+        sid = _ayden_extract_session(link)
+        sess = requests.Session()
+        sess.headers.update({"User-Agent": _ADYEN_UA})
+        pk = _ayden_fetch_pubkey(sess, proxy)
+        num, mm, yy, cvc = _ayden_parse(cc_str)
+        enc = _ayden_encrypt(num, mm, yy, cvc, pk)
+        payload = {"sessionId": sid, "paymentMethod": {"type": "scheme", **enc, "holderName": "John Doe"}, "browserInfo": {"userAgent": _ADYEN_UA, "acceptHeader": "*/*", "language": "en-US", "colorDepth": 24, "screenHeight": 1080, "screenWidth": 1920, "timeZoneOffset": -60, "javaEnabled": True}}
+        r = sess.post(_ADYEN_PAYMENT_URL, json=payload, headers={"Content-Type": "application/json", "Origin": "https://checkoutshopper-live.adyen.com", "Referer": link}, proxies=proxy, timeout=30)
+        rj = r.json()
+        if r.status_code in (200,201,202):
+            rc = rj.get("resultCode","Unknown")
+            if rc=="Authorised": return {"status":"approved","response":"Authorised","cc":cc_str}
+            if rc=="Refused": return {"status":"declined","response":rj.get("refusalReason","Refused"),"cc":cc_str}
+            return {"status":rc.lower(),"response":rj.get("message",""),"cc":cc_str}
+        return {"error":rj.get("message",f"HTTP {r.status_code}")[:100],"cc":cc_str}
+    except Exception as e:
+        return {"error":str(e)[:100],"cc":cc_str}
 try:
     import webshare as _webshare_mod
     _WEBSHARE_AVAILABLE = True
