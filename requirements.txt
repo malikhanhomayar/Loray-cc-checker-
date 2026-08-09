@@ -1,0 +1,6 @@
+aiogram
+aiohttp
+httpx
+requests
+cachetools
+curl_cffi
