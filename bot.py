@@ -246,8 +246,8 @@ log = logging.getLogger("bot")
 TOKEN = "8993979155:AAHZlMoKpuIt6fWFeWENLusuWHEFsUXAgAk" 
 
 # ── Join requirements ─────────────────────────────────────────────────────────
-join_channel_id = --1003414638512       # Replace with your channel ID
-join_chat_id    = --1003414638512       # Replace with your group ID
+join_channel_id = -1003773483513       # Replace with your channel ID
+join_chat_id    =  -1003742612622      # Replace with your group ID
 
 CHANNEL_LINK = "https://t.me/zeronumbars"
 GROUP_LINK   = "https://t.me/zeronumbars"
