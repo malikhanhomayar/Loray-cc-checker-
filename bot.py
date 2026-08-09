@@ -243,7 +243,7 @@ log = logging.getLogger("bot")
 #  CONFIG
 # ══════════════════════════════════════════════════════════════════════════════
 
-TOKEN = "8836592275:AAGj3ZBWjOrJrzP0lobs9k3lkRDr39KZUt8" 
+TOKEN = "8993979155:AAHZlMoKpuIt6fWFeWENLusuWHEFsUXAgAk" 
 
 # ── Join requirements ─────────────────────────────────────────────────────────
 join_channel_id = --1003414638512       # Replace with your channel ID
