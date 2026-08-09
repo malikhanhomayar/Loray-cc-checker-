@@ -1,3 +1,5 @@
+requests
+cryptography
 aiogram
 aiohttp
 httpx
