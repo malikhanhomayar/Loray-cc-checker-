@@ -452,11 +452,11 @@ async def guard_gen_cards(cards: list[str], message: types.Message, user_id: int
 
 
 # ── Thread pool for sync gates (hit, st, chk, rz, st1, etc.) ─────────────────
-# 8-core bot VPS: 500 threads handles concurrent sync gate workers with headroom.
-CHECKER_POOL = concurrent.futures.ThreadPoolExecutor(max_workers=500)
+# 8-core bot VPS: 2000 threads handles concurrent sync gate workers with headroom.
+CHECKER_POOL = concurrent.futures.ThreadPoolExecutor(max_workers=2000)
 
 # ── Per-user concurrency limiter for /msh (prevents one user starving others) ─
-_USER_SEM_LIMIT = 100
+_USER_SEM_LIMIT = 300
 _user_semaphores: dict[int, asyncio.Semaphore] = {}
 
 def get_user_semaphore(user_id: int) -> asyncio.Semaphore:
@@ -482,8 +482,8 @@ def set_cooldown(user_id: int):
     _user_last_cmd[user_id] = time.time()
 
 # ── Mass check batch size ─────────────────────────────────────────────────────
-MSH_BATCH = 100
-MSH_MAX_CCS = 100
+MSH_BATCH = 300
+MSH_MAX_CCS = 600
 
 # ══════════════════════════════════════════════════════════════════════════════
 #  PREMIUM EMOJI IDS

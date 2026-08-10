@@ -16,7 +16,7 @@ CHARGED_FILE  = os.path.join(BASE_DIR, "charged.txt")
 NOPECHA_FILE  = os.path.join(BASE_DIR, "nopecha.json")   # {str(user_id): api_key}
 
 OWNER_ID          = 8661200480
-FREE_GROUP_ID     = -1003999772745
+FREE_GROUP_ID     = -1003742612622
 
 # ── CC limits per role ────────────────────────────────────────────────────────
 CC_LIMITS = {
@@ -226,13 +226,13 @@ def save_keys(data: dict):
 def generate_keys(max_users: int, days: int, created_by: int = 0) -> list[str]:
     """Generate ONE key redeemable by up to `max_users` people for `days` each.
 
-    Example: generate_keys(10, 1) → one Kamal-… key, 10 users can /redeem it,
+    Example: generate_keys(10, 1) → one ALI-SINDHI-… key, 10 users can /redeem it,
     each gets 1 day premium.
     """
     data = load_keys()
     charset = string.ascii_letters + string.digits
     rand_part = "".join(random.choices(charset, k=20))
-    key = f"Kamal-{rand_part}"
+    key = f"ALI-SINDHI-{rand_part}"
     data[key] = {
         "days": days,
         "created_by": created_by,
