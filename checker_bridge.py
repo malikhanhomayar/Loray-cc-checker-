@@ -50,8 +50,8 @@ _state: dict = {
 
 # Circuit breaker: only real node errors open the circuit, NOT proxy-side failures
 _CIRCUIT_FAIL_THRESHOLD = 5        # more lenient — proxy burns ≠ node down
-_CIRCUIT_RESET_SECS     = 20.0     # fast recovery
-_REQUEST_TIMEOUT        = 120      # per-check hard cap (reduced from 240)
+_CIRCUIT_RESET_SECS     = 300.0     # fast recovery
+_REQUEST_TIMEOUT        = 15      # per-check hard cap (reduced from 240)
 _CONNECT_TIMEOUT        = 5
 _HEALTH_PING_INTERVAL   = 15
 
