@@ -249,8 +249,8 @@ TOKEN = "8993979155:AAHZlMoKpuIt6fWFeWENLusuWHEFsUXAgAk"
 join_channel_id = -1003773483513       # Replace with your channel ID
 join_chat_id    =  -1003742612622      # Replace with your group ID
 
-CHANNEL_LINK = "https://t.me/zeronumbars"
-GROUP_LINK   = "https://t.me/zeronumbars"
+CHANNEL_LINK = "https://t.me/ccxjchfk"
+GROUP_LINK   = "https://t.me/hqavjqn"
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
 BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
@@ -2224,8 +2224,8 @@ async def cmd_sh(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -2623,8 +2623,8 @@ async def cmd_msh(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -3752,8 +3752,8 @@ async def cmd_ran(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -4129,7 +4129,7 @@ async def cmd_redeem(message: types.Message):
     args = message.text.split(maxsplit=1)
     if len(args) < 2 or not args[1].strip():
         await message.reply(
-            f"{pe(E['warn'])} {bold('Usage:')} /redeem {bold('Kamal-xxxxx')}"
+            f"{pe(E['warn'])} {bold('Usage:')} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -4436,8 +4436,8 @@ async def cmd_ayd(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -5774,8 +5774,8 @@ async def cmd_sadd(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -6022,8 +6022,8 @@ async def cmd_st(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -6184,8 +6184,8 @@ async def cmd_mst(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -6431,8 +6431,8 @@ async def cmd_stxt(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -6627,8 +6627,8 @@ async def cmd_stest(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -6969,8 +6969,8 @@ async def cmd_rzsite(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -7231,8 +7231,8 @@ async def cmd_rztest(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -7340,8 +7340,8 @@ async def cmd_rz(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -7532,8 +7532,8 @@ async def cmd_mrz(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -7856,8 +7856,8 @@ async def cmd_rztxt(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -8039,8 +8039,8 @@ async def cmd_chk(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -8186,8 +8186,8 @@ async def cmd_mchk(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -8388,8 +8388,8 @@ async def cmd_chktxt(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -8554,8 +8554,8 @@ async def cmd_vbv(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -8684,8 +8684,8 @@ async def cmd_mvbv(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -8892,8 +8892,8 @@ async def _usd1_single_cmd(message: types.Message, gate_label: str, checker):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
     cc_str = None
@@ -9209,8 +9209,8 @@ async def _usd1txt_cmd(message: types.Message, gate_label: str, checker, stop_fl
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
     if not message.reply_to_message or not message.reply_to_message.document:
@@ -9693,8 +9693,8 @@ async def cmd_skcvv(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
     if skcvv is None:
@@ -10031,8 +10031,8 @@ async def cmd_sktxt(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
     if skcvv is None:
@@ -10231,8 +10231,8 @@ async def cmd_br(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
@@ -10885,8 +10885,8 @@ async def cmd_b3(message: types.Message):
     if not auth.has_premium_access(user_id, message.chat.id):
         await message.reply(
             f"{pe(E['cross'])} {bold('Premium Access Required!')}"
-            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @Mod_By_Kamal')}"
-            f"\n{pe(E['next'])} /redeem {bold('Kamal-xxxxx')}"
+            f"\n\n{pe(E['bolt'])} {bold('Contact admin or redeem a key: @iam_ERROROFKING')}"
+            f"\n{pe(E['next'])} /redeem {bold('ALI-SINDHI-xxxxx')}"
         )
         return
 
